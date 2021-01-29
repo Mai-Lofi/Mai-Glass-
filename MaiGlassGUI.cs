@@ -203,11 +203,11 @@ public class MaiGlassGUI : ShaderGUI
         var TextStyle = new GUIStyle { font = VrchatFont, fontSize = 15, fontStyle = FontStyle.Italic };
         GUILayout.Label("Shader by:", TextStyle);
         GUILayout.Space(2);
-        GUILayout.Label("Doppelgänger#8376", TextStyle);
+        GUILayout.Label("MAIiii", TextStyle);
         GUILayout.Space(6);
-        GUILayout.Label("Thanks for help with editor:", TextStyle);
+        GUILayout.Label("Than:", TextStyle);
         GUILayout.Space(2);
-        GUILayout.Label("Bkp#8336", TextStyle);
+        GUILayout.Label("just meeeee", TextStyle);
 
         EditorGUILayout.EndVertical();
     }
