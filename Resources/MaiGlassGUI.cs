@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class MaiGlassGUI : ShaderGUI
 {
+    private Font CuteFont = (Font)Resources.Load(@"Yeyey_font");
     private Font VrchatFont = (Font)Resources.Load(@"segoesc");
     private Texture2D bannerTex = Resources.Load<Texture2D>("bg");
-    private Texture2D konimg = Resources.Load<Texture2D>("gg");
+    private Texture2D MaiInfo = Resources.Load<Texture2D>("MaiInfo");
+    private Texture2D maiheaderimg = Resources.Load<Texture2D>("MaiHeader");
     private Texture2D maiTitle = Resources.Load<Texture2D>("Mai_Glass");    
 /*
     private MaterialProperty _Color;
@@ -42,24 +44,50 @@ public class MaiGlassGUI : ShaderGUI
     private MaterialProperty _CubeMapEnable;
     private MaterialProperty __dirty;
 
-
-
-    private void DrawBanner(string text1, string text2, string URL)
+    private void DrawInfo(string text1, string text2, string URL)
     {
-        GUIStyle rateTxt = new GUIStyle { font = VrchatFont };
-        rateTxt.alignment = TextAnchor.LowerRight;
+        GUIStyle rateTxt = new GUIStyle { font = CuteFont };
+        rateTxt.alignment = TextAnchor.LowerLeft;
         rateTxt.normal.textColor = new Color(0.9f, 0.9f, 0.9f);
-        rateTxt.fontSize = 12;
+        rateTxt.fontSize = 14;
         rateTxt.padding = new RectOffset(0, 1, 0, 1);
 
         GUIStyle title = new GUIStyle(rateTxt);
-        title.normal.textColor = new Color(1f, 1f, 1f);
+        title.normal.textColor = new Color(1f, 0.89f, 0.98f);
         title.alignment = TextAnchor.MiddleCenter;
-        title.fontSize = 18;
+        title.fontSize = 24;
 
         EditorGUILayout.BeginVertical("GroupBox");
-        var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 35, 35);
-        EditorGUI.DrawPreviewTexture(rect, bannerTex, null, ScaleMode.ScaleAndCrop);
+        var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 100, 500);
+        EditorGUI.DrawPreviewTexture(rect, MaiInfo, null, ScaleMode.ScaleAndCrop);
+
+        EditorGUI.LabelField(rect, text2, rateTxt);
+        EditorGUI.LabelField(rect, text1, title);
+
+        if (GUI.Button(rect, "", new GUIStyle()))
+        {
+            Application.OpenURL(URL);
+        }
+
+        EditorGUILayout.EndVertical();
+    }
+
+    private void DrawBanner(string text1, string text2, string URL)
+    {
+        GUIStyle rateTxt = new GUIStyle { font = CuteFont };
+        rateTxt.alignment = TextAnchor.LowerRight;
+        rateTxt.normal.textColor = new Color(0.9f, 0.9f, 0.9f);
+        rateTxt.fontSize = 14;
+        rateTxt.padding = new RectOffset(0, 1, 0, 1);
+
+        GUIStyle title = new GUIStyle(rateTxt);
+        title.normal.textColor = new Color(1f, 0.89f, 0.98f);
+        title.alignment = TextAnchor.MiddleCenter;
+        title.fontSize = 24;
+
+        EditorGUILayout.BeginVertical("GroupBox");
+        var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 100, 500);
+        EditorGUI.DrawPreviewTexture(rect, maiheaderimg, null, ScaleMode.ScaleAndCrop);
 
         EditorGUI.LabelField(rect, text2, rateTxt);
         EditorGUI.LabelField(rect, text1, title);
@@ -88,7 +116,7 @@ public class MaiGlassGUI : ShaderGUI
 
         EditorGUILayout.BeginVertical("GroupBox");
         var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 100, 500);
-        EditorGUI.DrawPreviewTexture(rect, konimg, null, ScaleMode.ScaleAndCrop );//ScaleMode.ScaleAndCrop
+        EditorGUI.DrawPreviewTexture(rect, MaiInfo, null, ScaleMode.ScaleAndCrop );//ScaleMode.ScaleAndCrop
 
         EditorGUI.LabelField(rect, text2, rateTxt);
         EditorGUI.LabelField(rect, text1, title);
@@ -108,7 +136,7 @@ public class MaiGlassGUI : ShaderGUI
     {
         Material material = editor.target as Material;
 
-        DrawBanner("Dissolve Mirror Shader", "Open Discord", "https://discord.gg/5PHerbf");
+        DrawBanner("Mai Glass Shader!", "Open Shader Guide", "https://pinkbunny.tech/?p=386");
 
         FindProperties(properties);
 
@@ -151,11 +179,11 @@ public class MaiGlassGUI : ShaderGUI
         EditorGUILayout.EndVertical();
 
 
-        DrawBanner("Info", "Open Patreon", "https://www.patreon.com/Mai_Lofi");
+        DrawInfo("Info", "Open Patreon", "https://www.patreon.com/Mai_Lofi");
 
         DrawCredits();
 
-        MaiBannor("Dissolve Mirror Shader", "Open Discord", "https://discord.gg/5PHerbf");
+        //MaiBannor("Dissolve Mirror Shader", "Open Discord", "https://discord.gg/5PHerbf");
         //EditorGUI.DrawPreviewTexture(rect, konimg, null );//ScaleMode.ScaleAndCrop
 
 
@@ -173,19 +201,7 @@ public class MaiGlassGUI : ShaderGUI
 
     private void FindProperties(MaterialProperty[] properties)
     {
-        /*
-        _Color = FindProperty("_Color", properties);
-        MASK = FindProperty("MASK", properties);
-        MASKD = FindProperty("MASKD", properties);
-        DTYPE = FindProperty("DTYPE", properties);
-        _DissolveTex = FindProperty("_DissolveTex", properties);
-        _glowr = FindProperty("_glowr", properties);
-        _ps = FindProperty("_ps", properties);
-        _maskpow = FindProperty("_maskpow", properties);
-        _dspow = FindProperty("_dspow", properties);
-        _Tile = FindProperty("_Tile", properties);
-        _mspeed = FindProperty("_mspeed", properties);
-        */
+
         //mai-add
         _GlassTint = FindProperty("_GlassTint", properties);
         _smooth = FindProperty("_smooth", properties);
@@ -214,10 +230,14 @@ public class MaiGlassGUI : ShaderGUI
         EditorGUILayout.BeginVertical("GroupBox");
 
         var TextStyle = new GUIStyle { font = VrchatFont, fontSize = 15, fontStyle = FontStyle.Italic };
-        GUILayout.Label("Shader by:", TextStyle);
+        GUILayout.Label("Shader made with love by:", TextStyle);
         GUILayout.Space(2);
-        GUILayout.Label("MAIiii", TextStyle);
+        GUILayout.Label("Mai Lofi#0348", TextStyle);
         GUILayout.Space(6);
+
+        var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 100, 500);
+        EditorGUI.DrawPreviewTexture(rect, MaiInfo, null, ScaleMode.ScaleAndCrop);
+
         GUILayout.Label("Than:", TextStyle);
         GUILayout.Space(2);
         GUILayout.Label("just meeeee", TextStyle);
