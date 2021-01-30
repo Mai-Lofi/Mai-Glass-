@@ -6,6 +6,7 @@ public class MaiGlassGUI : ShaderGUI
 {
     private Font VrchatFont = (Font)Resources.Load(@"segoesc");
     private Texture2D bannerTex = Resources.Load<Texture2D>("bg");
+    private Texture2D konimg = Resources.Load<Texture2D>("gg");
     private Texture2D maiTitle = Resources.Load<Texture2D>("Mai_Glass");    
 /*
     private MaterialProperty _Color;
@@ -71,6 +72,34 @@ public class MaiGlassGUI : ShaderGUI
         EditorGUILayout.EndVertical();
     }
 
+        private void MaiBannor(string text1, string text2, string URL)
+    {
+        GUIStyle rateTxt = new GUIStyle { font = VrchatFont };
+        rateTxt.alignment = TextAnchor.LowerRight;
+        rateTxt.normal.textColor = new Color(0.9f, 0.9f, 0.9f);
+        rateTxt.fontSize = 12;
+        rateTxt.padding = new RectOffset(0, 1, 0, 1);
+
+        GUIStyle title = new GUIStyle(rateTxt);
+        title.normal.textColor = new Color(1f, 1f, 1f);
+        title.alignment = TextAnchor.MiddleCenter;
+        title.fontSize = 18;
+
+        EditorGUILayout.BeginVertical("GroupBox");
+        var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 35, 35);
+        EditorGUI.DrawPreviewTexture(rect, konimg, null, ScaleMode.ScaleAndCrop);
+
+        EditorGUI.LabelField(rect, text2, rateTxt);
+        EditorGUI.LabelField(rect, text1, title);
+
+        if (GUI.Button(rect, "", new GUIStyle()))
+        {
+            Application.OpenURL(URL);
+        }
+
+        EditorGUILayout.EndVertical();
+    }
+
     public override void OnGUI(MaterialEditor editor, MaterialProperty[] properties)
     {
         Material material = editor.target as Material;
@@ -83,25 +112,7 @@ public class MaiGlassGUI : ShaderGUI
         //var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 35, 35);//
         //EditorGUI.DrawPreviewTexture(rect, bannerTex, null, ScaleMode.ScaleAndCrop);//
         Header("Main Glass Settings");
-/*
-        editor.ShaderProperty(DTYPE, MakeLabel(DTYPE));
-        if (material.GetInt("DTYPE") == 1)
-        {
-            editor.TexturePropertySingleLine(new GUIContent(_DissolveTex.displayName), _DissolveTex, _Color);
-            editor.TextureScaleOffsetProperty(_DissolveTex);
-            editor.ShaderProperty(_ps, MakeLabel(_ps));
-        }
-        else 
-        {
-            editor.ShaderProperty(_Color, MakeLabel(_Color));
-            editor.ShaderProperty(_Tile, MakeLabel(_Tile));
-            editor.ShaderProperty(_mspeed, MakeLabel(_mspeed));
-        }
-        editor.ShaderProperty(_glowr, MakeLabel(_glowr));
-        editor.ShaderProperty(_dspow, MakeLabel(_dspow));
-*/
 
-        //editor.ShaderHeader( "Mattalic (keep low)"); //maiadd
         editor.ShaderProperty(_GlassTint, MakeLabel(_GlassTint)); //maiadd
         editor.ShaderProperty(_smooth, "Smoothness"); //maiadd
         editor.ShaderProperty(_mattalic, "Mattalic (keep low)"); //maiadd
@@ -133,38 +144,18 @@ public class MaiGlassGUI : ShaderGUI
         editor.ShaderProperty(_NoisePan, "Noise Pan Speed"); //maiadd 
 
 
-
-
-
-
-
         EditorGUILayout.EndVertical();
 
-        /*
 
-        EditorGUILayout.BeginVertical("GroupBox");
-
-        Header("Dissolve Mask Settings");
-
-        editor.ShaderProperty(MASK, MakeLabel(MASK));
-        editor.ShaderProperty(MASKD, MakeLabel(MASKD));
-        editor.ShaderProperty(_maskpow, MakeLabel(_maskpow));
-        
-        EditorGUILayout.BeginVertical("GroupBox");
-        var style = new GUIStyle { };
-        GUILayout.Label("Dissolve effect controlled by", style);
-        GUILayout.Label("Transform Scale Z of mirror object", style);
-        GUILayout.Label("Related on recording animations problem", style);
-        GUILayout.Label("with VRC_MirrorReflection script", style);
-        EditorGUILayout.EndVertical();
-
-        EditorGUILayout.EndVertical();
-
-        */
-
-        DrawBanner("Patreon", "Open Patreon", "https://www.patreon.com/Mai_Lofi");
+        DrawBanner("Info", "Open Patreon", "https://www.patreon.com/Mai_Lofi");
 
         DrawCredits();
+
+        MaiBannor("Dissolve Mirror Shader", "Open Discord", "https://discord.gg/5PHerbf");
+
+       // GUI.DrawTexture(new Rect(10, 10, 60, 60), konimg, ScaleMode.ScaleToFit, true, 10.0F);
+
+        //GUILayout.Box(konimg);
     }
 
     private static GUIContent MakeLabel(MaterialProperty property, string tooltip = null)
