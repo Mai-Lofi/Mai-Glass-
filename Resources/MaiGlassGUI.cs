@@ -72,8 +72,9 @@ public class MaiGlassGUI : ShaderGUI
         EditorGUILayout.EndVertical();
     }
 
-        private void MaiBannor(string text1, string text2, string URL)
+        private void MaiBannor(string text1, string text2, string URL)//
     {
+        
         GUIStyle rateTxt = new GUIStyle { font = VrchatFont };
         rateTxt.alignment = TextAnchor.LowerRight;
         rateTxt.normal.textColor = new Color(0.9f, 0.9f, 0.9f);
@@ -86,8 +87,8 @@ public class MaiGlassGUI : ShaderGUI
         title.fontSize = 18;
 
         EditorGUILayout.BeginVertical("GroupBox");
-        var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 35, 35);
-        EditorGUI.DrawPreviewTexture(rect, konimg, null, ScaleMode.ScaleAndCrop);
+        var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 100, 500);
+        EditorGUI.DrawPreviewTexture(rect, konimg, null, ScaleMode.ScaleAndCrop );//ScaleMode.ScaleAndCrop
 
         EditorGUI.LabelField(rect, text2, rateTxt);
         EditorGUI.LabelField(rect, text1, title);
@@ -98,6 +99,9 @@ public class MaiGlassGUI : ShaderGUI
         }
 
         EditorGUILayout.EndVertical();
+
+        
+
     }
 
     public override void OnGUI(MaterialEditor editor, MaterialProperty[] properties)
@@ -152,8 +156,9 @@ public class MaiGlassGUI : ShaderGUI
         DrawCredits();
 
         MaiBannor("Dissolve Mirror Shader", "Open Discord", "https://discord.gg/5PHerbf");
+        //EditorGUI.DrawPreviewTexture(rect, konimg, null );//ScaleMode.ScaleAndCrop
 
-       // GUI.DrawTexture(new Rect(10, 10, 60, 60), konimg, ScaleMode.ScaleToFit, true, 10.0F);
+
 
         //GUILayout.Box(konimg);
     }

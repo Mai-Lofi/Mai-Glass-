@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: Lofi Water
   m_Shader: {fileID: 4800000, guid: 881e37927165995428be4713c77c0609, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _CUBEMAPENABLE_ON _MAISWITCH_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CubeMap:
-        m_Texture: {fileID: 8900000, guid: 0013ffc6d3de94946a70371bfec5170c, type: 3}
+        m_Texture: {fileID: 8900000, guid: 5a817d7ded3353146a488c3ec0e7bab6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 2800000, guid: ba05dfde204800641b4c1d4461c31aa9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4edce5550652112419c15a28a4679042, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -77,8 +77,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _ChromaticAberration: 0.1
-    - _CubeMapEnable: 0
+    - _ChromaticAberration: 0
+    - _CubeMapEnable: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -87,14 +87,14 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _IndexofRefraction: 0.75
-    - _MaiSwitch: 0
+    - _MaiSwitch: 1
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseMapSize: 0
-    - _NoisePan: 0
-    - _NormalStrength: 0
+    - _NoiseMapSize: 1.03
+    - _NoisePan: 0.056
+    - _NormalStrength: 0.14
     - _OcclusionStrength: 1
-    - _Opacity: 0
+    - _Opacity: 0.347
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -103,10 +103,10 @@ Material:
     - _ZWrite: 1
     - __dirty: 1
     - _mattalic: 0
-    - _smooth: 0.85
+    - _smooth: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GlassTint: {r: 1, g: 0.6650944, b: 0.9948942, a: 0}
-    - _NormalPan: {r: 0.05, g: 0, b: 0, a: 0}
-    - _emission: {r: 1, g: 1, b: 1, a: 0}
+    - _GlassTint: {r: 0.495283, g: 0.9897998, b: 1, a: 0}
+    - _NormalPan: {r: 0, g: 0, b: 0, a: 0}
+    - _emission: {r: 0.6886792, g: 0.25013348, b: 0.6767875, a: 0}
