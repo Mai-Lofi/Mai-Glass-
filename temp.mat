@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: temp
   m_Shader: {fileID: 4800000, guid: 70e1fdbd0284d164d9b344c73bdb9b65, type: 3}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _TOGGLESWITCH0_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -20,16 +20,20 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _CubeMap:
+        m_Texture: {fileID: 8900000, guid: 9ccc8256137e34007aa7431f24b86ce4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CubeMap1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 2800000, guid: 5c31794fc100c8c41b03e8b59ab517cf, type: 3}
+        m_Texture: {fileID: 2800000, guid: ba05dfde204800641b4c1d4461c31aa9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture0:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 2800000, guid: 4605bcf53ede01745a443dd13cb37da9, type: 3}
+        m_Scale: {x: 0, y: 1}
         m_Offset: {x: 0, y: 0}
     - _texcoord:
         m_Texture: {fileID: 0}
@@ -39,9 +43,10 @@ Material:
     - _ChromaticAberration: 0.1
     - _EmissionStregth: 0
     - _IndexofRefraction: 0.75
-    - _NormalStrength: 0.611
+    - _NormalStrength: 0
     - _Opacity: 0.281
-    - _RadialDistortion: 0.036
+    - _RadialDistortion: 0
+    - _ToggleSwitch0: 1
     - __dirty: 1
     - _mattalic: 0
     - _smooth: 1

@@ -34,6 +34,11 @@ public class MaiGlassGUI : ShaderGUI
     private MaterialProperty _NormalStrength;
     private MaterialProperty _NormalPan;
     private MaterialProperty _texcoord;
+    private MaterialProperty _NoisePan;
+    private MaterialProperty _NoiseMapSize;
+    private MaterialProperty _NoiseTexture;
+    private MaterialProperty _MaiSwitch;
+    private MaterialProperty _CubeMapEnable;
     private MaterialProperty __dirty;
 
 
@@ -113,12 +118,19 @@ public class MaiGlassGUI : ShaderGUI
 
         MaiSub("Reflections"); 
 
-        editor.ShaderProperty(_Opacity, "Opacity"); //maiadd          
+        editor.ShaderProperty(_Opacity, "Opacity"); //maiadd 
+        editor.ShaderProperty(_CubeMapEnable, "Enable Cube map"); //maiadd          
         editor.ShaderProperty(_CubeMap, "Reflection Cubemap"); //maiadd
 
         MaiSub("Emission"); 
         editor.ShaderProperty(_EmissionStregth, "Emission Strength"); //maiadd  
         editor.ShaderProperty(_emission, "Emission Color"); //maiadd 
+
+        MaiSub("Noise");
+        editor.ShaderProperty(_MaiSwitch, "Noise Toggle"); //maiadd         
+        editor.ShaderProperty(_NoiseTexture, "Noise Texture"); //maiadd 
+        editor.ShaderProperty(_NoiseMapSize, "Noise Map Size"); //maiadd 
+        editor.ShaderProperty(_NoisePan, "Noise Pan Speed"); //maiadd 
 
 
 
@@ -192,6 +204,11 @@ public class MaiGlassGUI : ShaderGUI
         _NormalStrength = FindProperty("_NormalStrength", properties);
         _NormalPan = FindProperty("_NormalPan", properties);
         _texcoord = FindProperty("_texcoord", properties);
+        _NoiseMapSize = FindProperty("_NoiseMapSize", properties);
+        _NoisePan = FindProperty("_NoisePan", properties);
+        _NoiseTexture = FindProperty("_NoiseTexture", properties);
+        _MaiSwitch = FindProperty("_MaiSwitch", properties);
+        _CubeMapEnable = FindProperty("_CubeMapEnable", properties);
         __dirty = FindProperty("__dirty", properties);
 
     }
