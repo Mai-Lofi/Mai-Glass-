@@ -127,7 +127,7 @@ public class MaiGlassGUI : ShaderGUI
         editor.ShaderProperty(_emission, "Emission Color"); //maiadd 
 
         MaiSub("Noise");
-        editor.ShaderProperty(_MaiSwitch, "Noise Toggle"); //maiadd         
+        editor.ShaderProperty(_MaiSwitch, "Noise Toggle (Req normal strength)"); //maiadd         
         editor.ShaderProperty(_NoiseTexture, "Noise Texture"); //maiadd 
         editor.ShaderProperty(_NoiseMapSize, "Noise Map Size"); //maiadd 
         editor.ShaderProperty(_NoisePan, "Noise Pan Speed"); //maiadd 

@@ -5,7 +5,6 @@ ShaderImporter:
   defaultTextures:
   - _NormalTex: {fileID: 2800000, guid: ba05dfde204800641b4c1d4461c31aa9, type: 3}
   - _NoiseTexture: {fileID: 2800000, guid: e3b6177768b83d246b2e98e5205e82d7, type: 3}
-  - _CubeMap1: {fileID: 8900000, guid: 0013ffc6d3de94946a70371bfec5170c, type: 3}
   - _CubeMap: {fileID: 8900000, guid: 0013ffc6d3de94946a70371bfec5170c, type: 3}
   nonModifiableTextures: []
   userData: 
