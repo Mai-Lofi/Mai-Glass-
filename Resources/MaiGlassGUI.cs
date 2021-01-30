@@ -7,32 +7,19 @@ public class MaiGlassGUI : ShaderGUI
     private Font CuteFont = (Font)Resources.Load(@"Yeyey_font");
     private Font VrchatFont = (Font)Resources.Load(@"segoesc");
     private Texture2D bannerTex = Resources.Load<Texture2D>("bg");
+    private Texture2D patreonlogo = Resources.Load<Texture2D>("patreonlogo");
+    private Texture2D discordlogo = Resources.Load<Texture2D>("discordlogo");
+    private Texture2D youtubelogo = Resources.Load<Texture2D>("youtubelogo");
+    private Texture2D pinkbunnylogo = Resources.Load<Texture2D>("pinkbunnylogo");
     private Texture2D MaiInfo = Resources.Load<Texture2D>("MaiInfo");
-    //private Texture2D discordlogo = Resources.Load<Texture2D>("mailogo");
-    private Texture2D KofiIcon = Resources.Load<Texture2D>("mailogo");
-    //private KofiIcon = ("kofi-logo") as Texture2D ?? Star;
+
     private Texture2D maiheaderimg = Resources.Load<Texture2D>("MaiHeader");
     private Texture2D maiTitle = Resources.Load<Texture2D>("Mai_Glass");
-    //static Icons(){
-    //    KofiIcon = Resources.Load("kofi-logo") as Texture2D ?? Star;    
-    //}
+
 
 
     
-/*
-    private MaterialProperty _Color;
-    private MaterialProperty MASK;
-    private MaterialProperty MASKD;
-    private MaterialProperty DTYPE;
 
-    private MaterialProperty _DissolveTex;
-    private MaterialProperty _ps;
-    private MaterialProperty _glowr;
-    private MaterialProperty _maskpow;
-    private MaterialProperty _dspow;
-    private MaterialProperty _Tile;
-    private MaterialProperty _mspeed;
-    */
     private MaterialProperty _GlassTint;
     private MaterialProperty _smooth;
     private MaterialProperty _CubeMap;
@@ -138,7 +125,7 @@ public class MaiGlassGUI : ShaderGUI
         EditorGUILayout.EndVertical();
 
     }
-    private void DrawMaiButton(string buttonName, string buttonURL)
+    private void DrawMaiButton(string buttonName, string buttonURL, Texture2D buttonicon)
         {
 
                 EditorGUILayout.Space();
@@ -146,7 +133,7 @@ public class MaiGlassGUI : ShaderGUI
 
 
 
-                if(GUILayout.Button(new GUIContent(buttonName, KofiIcon)))
+                if(GUILayout.Button(new GUIContent(buttonName, buttonicon)))
                 {
                     Application.OpenURL(buttonURL);
                 }
@@ -263,10 +250,10 @@ public class MaiGlassGUI : ShaderGUI
         GUILayout.Label("Mai Lofi#0348", TextStyle);
         GUILayout.Space(6);
 
-        DrawMaiButton("    more free assets on my website!", "https://pinkbunny.tech");
-        DrawMaiButton("    s-support pwetty pwease ( >ω<)♡(>ω< ✿)", "https://www.patreon.com/Mai_Lofi");
-        DrawMaiButton("    kons, lofi, raids, and creation help!", "https://discord.gg/mTZ5h9hqMb");
-        DrawMaiButton("    tutorials n stuff", "https://www.youtube.com/channel/UC4kwlkzebOFQOMENUaacgdg");
+        DrawMaiButton("    more free assets on my website!", "https://pinkbunny.tech", pinkbunnylogo);
+        DrawMaiButton("    s-support pwetty pwease ( >ω<)♡(>ω< ✿)", "https://www.patreon.com/Mai_Lofi", patreonlogo);
+        DrawMaiButton("    kons, lofi, raids, and creation help!", "https://discord.gg/mTZ5h9hqMb", discordlogo);
+        DrawMaiButton("    tutorials n stuff", "https://www.youtube.com/channel/UC4kwlkzebOFQOMENUaacgdg", youtubelogo);
 
         GUILayout.Label("Stay UWU my friends...", TextStyle);
 
