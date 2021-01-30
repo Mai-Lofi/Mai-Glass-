@@ -8,6 +8,7 @@ public class MaiGlassGUI : ShaderGUI
     private Font VrchatFont = (Font)Resources.Load(@"segoesc");
     private Texture2D bannerTex = Resources.Load<Texture2D>("bg");
     private Texture2D MaiInfo = Resources.Load<Texture2D>("MaiInfo");
+    private Texture2D discordlogo = Resources.Load<Texture2D>("discord-logo");
     private Texture2D maiheaderimg = Resources.Load<Texture2D>("MaiHeader");
     private Texture2D maiTitle = Resources.Load<Texture2D>("Mai_Glass");    
 /*
@@ -128,9 +129,25 @@ public class MaiGlassGUI : ShaderGUI
 
         EditorGUILayout.EndVertical();
 
-        
-
     }
+    private void DrawInfoMenuGUI()
+        {
+
+                EditorGUILayout.Space();
+
+                if(GUILayout.Button("discordlogo",))
+                {
+                    Application.OpenURL("https://pinkbunny.tech");
+                }
+
+
+                //if(GUILayout.Button(new GUIContent(Strings.Buttons.openDonationPage, Icons.KofiIcon), Styles.BigButton))
+                //{
+                //    Application.OpenURL(Strings.LINK_DONATION);
+                //}
+            
+        }
+
 
     public override void OnGUI(MaterialEditor editor, MaterialProperty[] properties)
     {
@@ -182,6 +199,7 @@ public class MaiGlassGUI : ShaderGUI
         DrawInfo("Info", "Open Patreon", "https://www.patreon.com/Mai_Lofi");
 
         DrawCredits();
+        DrawInfoMenuGUI();
 
         //MaiBannor("Dissolve Mirror Shader", "Open Discord", "https://discord.gg/5PHerbf");
         //EditorGUI.DrawPreviewTexture(rect, konimg, null );//ScaleMode.ScaleAndCrop
