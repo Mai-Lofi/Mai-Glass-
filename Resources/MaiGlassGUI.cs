@@ -8,9 +8,17 @@ public class MaiGlassGUI : ShaderGUI
     private Font VrchatFont = (Font)Resources.Load(@"segoesc");
     private Texture2D bannerTex = Resources.Load<Texture2D>("bg");
     private Texture2D MaiInfo = Resources.Load<Texture2D>("MaiInfo");
-    private Texture2D discordlogo = Resources.Load<Texture2D>("discord-logo");
+    //private Texture2D discordlogo = Resources.Load<Texture2D>("mailogo");
+    private Texture2D KofiIcon = Resources.Load<Texture2D>("mailogo");
+    //private KofiIcon = ("kofi-logo") as Texture2D ?? Star;
     private Texture2D maiheaderimg = Resources.Load<Texture2D>("MaiHeader");
-    private Texture2D maiTitle = Resources.Load<Texture2D>("Mai_Glass");    
+    private Texture2D maiTitle = Resources.Load<Texture2D>("Mai_Glass");
+    //static Icons(){
+    //    KofiIcon = Resources.Load("kofi-logo") as Texture2D ?? Star;    
+    //}
+
+
+    
 /*
     private MaterialProperty _Color;
     private MaterialProperty MASK;
@@ -130,23 +138,23 @@ public class MaiGlassGUI : ShaderGUI
         EditorGUILayout.EndVertical();
 
     }
-    private void DrawInfoMenuGUI()
+    private void DrawMaiButton(string buttonName, string buttonURL)
         {
 
                 EditorGUILayout.Space();
+                
 
-                if(GUILayout.Button("discordlogo",))
+
+
+                if(GUILayout.Button(new GUIContent(buttonName, KofiIcon)))
                 {
-                    Application.OpenURL("https://pinkbunny.tech");
+                    Application.OpenURL(buttonURL);
                 }
 
 
-                //if(GUILayout.Button(new GUIContent(Strings.Buttons.openDonationPage, Icons.KofiIcon), Styles.BigButton))
-                //{
-                //    Application.OpenURL(Strings.LINK_DONATION);
-                //}
             
         }
+
 
 
     public override void OnGUI(MaterialEditor editor, MaterialProperty[] properties)
@@ -199,7 +207,9 @@ public class MaiGlassGUI : ShaderGUI
         DrawInfo("Info", "Open Patreon", "https://www.patreon.com/Mai_Lofi");
 
         DrawCredits();
-        DrawInfoMenuGUI();
+        //DrawInfoMenuGUI();
+
+    
 
         //MaiBannor("Dissolve Mirror Shader", "Open Discord", "https://discord.gg/5PHerbf");
         //EditorGUI.DrawPreviewTexture(rect, konimg, null );//ScaleMode.ScaleAndCrop
@@ -253,12 +263,15 @@ public class MaiGlassGUI : ShaderGUI
         GUILayout.Label("Mai Lofi#0348", TextStyle);
         GUILayout.Space(6);
 
-        var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 100, 500);
-        EditorGUI.DrawPreviewTexture(rect, MaiInfo, null, ScaleMode.ScaleAndCrop);
+       // var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 100, 500);
+        //EditorGUI.DrawPreviewTexture(rect, MaiInfo, null, ScaleMode.ScaleAndCrop);
+        
 
         GUILayout.Label("Than:", TextStyle);
         GUILayout.Space(2);
         GUILayout.Label("just meeeee", TextStyle);
+
+  
 
         EditorGUILayout.EndVertical();
     }
