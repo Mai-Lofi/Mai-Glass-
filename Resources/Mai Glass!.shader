@@ -1,5 +1,8 @@
-// Made with Amplify Shader Editor
-// Available at the Unity Asset Store - http://u3d.as/y3X 
+// Shader made by Mai Lofi#0348
+//dm me for help or anything
+//guide is available on pinkbunny.tech
+//Stay uwu my friends...
+
 Shader "!Mai Lofi!/Mai Glass!"
 {
 	Properties

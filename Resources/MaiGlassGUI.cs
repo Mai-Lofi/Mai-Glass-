@@ -2,6 +2,9 @@
 using UnityEditor;
 using UnityEngine;
 
+
+//This is my super duper cute GUI
+//Its very cute, yes..... yes it is!
 public class MaiGlassGUI : ShaderGUI
 {
     private Font CuteFont = (Font)Resources.Load(@"Yeyey_font");
@@ -153,8 +156,7 @@ public class MaiGlassGUI : ShaderGUI
         FindProperties(properties);
 
         EditorGUILayout.BeginVertical("GroupBox");
-        //var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 35, 35);//
-        //EditorGUI.DrawPreviewTexture(rect, bannerTex, null, ScaleMode.ScaleAndCrop);//
+
         Header("Main Glass Settings");
 
         editor.ShaderProperty(_GlassTint, MakeLabel(_GlassTint)); //maiadd
@@ -195,15 +197,6 @@ public class MaiGlassGUI : ShaderGUI
 
         DrawCredits();
 
-
-    
-
-        //MaiBannor("Dissolve Mirror Shader", "Open Discord", "https://discord.gg/5PHerbf");
-        //EditorGUI.DrawPreviewTexture(rect, konimg, null );//ScaleMode.ScaleAndCrop
-
-
-
-        //GUILayout.Box(konimg);
     }
 
     private static GUIContent MakeLabel(MaterialProperty property, string tooltip = null)
