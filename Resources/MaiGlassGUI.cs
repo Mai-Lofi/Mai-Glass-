@@ -203,11 +203,11 @@ public class MaiGlassGUI : ShaderGUI
 
         EditorGUILayout.EndVertical();
 
-
         DrawInfo("Info", "Open Patreon", "https://www.patreon.com/Mai_Lofi");
 
+
         DrawCredits();
-        //DrawInfoMenuGUI();
+
 
     
 
@@ -263,13 +263,13 @@ public class MaiGlassGUI : ShaderGUI
         GUILayout.Label("Mai Lofi#0348", TextStyle);
         GUILayout.Space(6);
 
-       // var rect = GUILayoutUtility.GetRect(0, int.MaxValue, 100, 500);
-        //EditorGUI.DrawPreviewTexture(rect, MaiInfo, null, ScaleMode.ScaleAndCrop);
-        
+        DrawMaiButton("    more free assets on my website!", "https://pinkbunny.tech");
+        DrawMaiButton("    s-support pwetty pwease ( >ω<)♡(>ω< ✿)", "https://www.patreon.com/Mai_Lofi");
+        DrawMaiButton("    kons, lofi, raids, and creation help!", "https://discord.gg/mTZ5h9hqMb");
+        DrawMaiButton("    tutorials n stuff", "https://www.youtube.com/channel/UC4kwlkzebOFQOMENUaacgdg");
 
-        GUILayout.Label("Than:", TextStyle);
-        GUILayout.Space(2);
-        GUILayout.Label("just meeeee", TextStyle);
+        GUILayout.Label("Stay UWU my friends...", TextStyle);
+
 
   
 
