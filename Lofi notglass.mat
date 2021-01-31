@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Lofi Water
+  m_Name: Lofi notglass
   m_Shader: {fileID: 4800000, guid: 881e37927165995428be4713c77c0609, type: 3}
-  m_ShaderKeywords: _CUBEMAPENABLE_ON _MAISWITCH_ON
+  m_ShaderKeywords: _CUBEMAPENABLE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CubeMap:
-        m_Texture: {fileID: 8900000, guid: 5a817d7ded3353146a488c3ec0e7bab6, type: 3}
+        m_Texture: {fileID: 8900000, guid: 3079b96e3eb728c45bbeea9a966b33a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -52,11 +52,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTexture:
-        m_Texture: {fileID: 2800000, guid: 5b5333f9a1f19b345aeeb1ac3fb09000, type: 3}
+        m_Texture: {fileID: 2800000, guid: e3b6177768b83d246b2e98e5205e82d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalTex:
-        m_Texture: {fileID: 2800000, guid: ac0a61de5ee5aaa429edf16692a0445d, type: 3}
+        m_Texture: {fileID: 2800000, guid: dde5e930836de624ea589c4a4a984020, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -77,7 +77,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _BumpScale: 1
-    - _ChromaticAberration: 0
+    - _ChromaticAberration: 0.007
     - _CubeMapEnable: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -86,15 +86,15 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _IndexofRefraction: 0.75
-    - _MaiSwitch: 1
+    - _IndexofRefraction: 0.596
+    - _MaiSwitch: 0
     - _Metallic: 0
     - _Mode: 0
-    - _NoiseMapSize: 1.03
-    - _NoisePan: 0.056
-    - _NormalStrength: 0.14
+    - _NoiseMapSize: 0
+    - _NoisePan: 0
+    - _NormalStrength: 0
     - _OcclusionStrength: 1
-    - _Opacity: 0.347
+    - _Opacity: 0.538
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -102,11 +102,11 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 1
-    - _mattalic: 0
+    - _mattalic: 0.517
     - _smooth: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GlassTint: {r: 0.495283, g: 0.9897998, b: 1, a: 0}
-    - _NormalPan: {r: 0, g: 0, b: 0, a: 0}
-    - _emission: {r: 0.6886792, g: 0.25013348, b: 0.6767875, a: 0}
+    - _GlassTint: {r: 1, g: 0.6650944, b: 0.9948942, a: 0}
+    - _NormalPan: {r: 0.05, g: 0, b: 0, a: 0}
+    - _emission: {r: 1, g: 1, b: 1, a: 0}
